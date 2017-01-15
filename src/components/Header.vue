@@ -5,6 +5,11 @@
                 <md-icon>home</md-icon>
             </md-button>
         </router-link>
+        <div @click="clearCache()">
+            <md-button class="md-icon-button">
+                <md-icon>cached</md-icon>
+            </md-button>
+        </div>
         <h2 class="md-title">
             <span class="header-link">
                 <router-link :to="{name: 'top' }">Minimal-Card-App</router-link>
@@ -34,5 +39,11 @@
         computed: {
             ...mapGetters(['getCurrentBoard', 'getCurrentCard'])
         },
+        methods: {
+            clearCache() {
+                localStorage.vuex = null
+                alert('cache cleared')
+            }
+        }
     }
 </script>
