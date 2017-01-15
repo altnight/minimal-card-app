@@ -13242,12 +13242,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ exports["default"] = {
     name: 'v-header',
-    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])(['getCurrentBoard', 'getCurrentCard']))
+    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])(['getCurrentBoard', 'getCurrentCard'])),
+    methods: {
+        clearCache() {
+            localStorage.vuex = null;
+            alert('cache cleared');
+        }
+    }
 };
 
 /***/ },
@@ -25835,7 +25846,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('md-button', {
     staticClass: "md-icon-button"
-  }, [_c('md-icon', [_vm._v("home")])], 1)], 1), _vm._v(" "), _c('h2', {
+  }, [_c('md-icon', [_vm._v("home")])], 1)], 1), _vm._v(" "), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.clearCache()
+      }
+    }
+  }, [_c('md-button', {
+    staticClass: "md-icon-button"
+  }, [_c('md-icon', [_vm._v("cached")])], 1)], 1), _vm._v(" "), _c('h2', {
     staticClass: "md-title"
   }, [_c('span', {
     staticClass: "header-link"
