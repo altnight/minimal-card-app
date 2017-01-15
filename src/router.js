@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
     mode: 'history',
-    base: '/',
+    base: '/minimal-card-app/',
     routes: [
         {path: '/', name: 'top', component: Top},
         {path: '/b/:board_id', name: 'board', component: Board, children: [
